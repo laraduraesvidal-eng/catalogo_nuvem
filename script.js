@@ -1,0 +1,43 @@
+// 1. CONFIGURAÇÃO DO BANCO DE DADOS
+const supabaseUrl = "https://mscexjamdkbdydbysrxy.supabase.co";
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1zY2V4amFtZGtiZHlkYnlzcnh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyNzE3MjksImV4cCI6MjA4OTg0NzcyOX0.Q79BW24Ron3giOrMeTduh1TzjkrnEQxgXdGOZORZwLI";
+
+// Inicia a conexão
+const banco = window.supabase.createClient(supabaseUrl, supabaseKey);
+
+// 2. FUNÇÃO PARA BUSCAR E DESENHAR OS PRODUTOS
+async function carregarCatalogo() {
+  // Faz um SELECT * FROM produtos na nuvem
+  let { data: produtos, error } = await banco.from("produtos").select("*");
+
+  if (error) {
+    console.error("Erro ao buscar dados:", error);
+    return;
+  }
+
+  let vitrine = document.getElementById("vitrine");
+  vitrine.innerHTML = ""; // Limpa a tela
+
+  // Loop para desenhar cada produto na tela
+  produtos.forEach((item) => {
+    // Cria a máscara de moeda Brasileira
+    let precoFormatado = Number(item.preco).toLocaleString("pt-BR", {
+      style: "currency",
+      currency: "BRL",
+    });
+
+    let div = document.createElement("div");
+    div.className = "card-produto";
+    div.innerHTML = `
+        <img src="${item.imagem_url}" width="150">
+        <h3>${item.nome}</h3>
+        <p class="preco-destaque">${precoFormatado}</p>
+        <h4>${item.categoria}</h4>
+    `;
+    vitrine.appendChild(div);
+  });
+}
+
+// Roda a função assim que o site abrir
+carregarCatalogo();

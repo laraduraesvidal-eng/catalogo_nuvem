@@ -1,0 +1,246 @@
+h1 {
+  color: rgb(255, 243, 223);
+  text-align: center;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #820b78 0%, #623756 100%);
+  margin: 0;
+  padding: 20px;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card-produto {
+  background: rgb(255, 243, 223);
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(255, 196, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.card-produto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(221, 145, 4, 0.2);
+}
+
+.card-produto img {
+  border-radius: 5px;
+  object-fit: cover;
+  height: 150px;
+}
+
+.admin-body {
+  background: linear-gradient(135deg, #820b78 0%, #623756 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.painel-container {
+  background-color: rgb(255, 243, 223);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(255, 191, 0, 0.1);
+  width: 100%;
+  max-width: 450px;
+  transition: transform 0.3s ease;
+}
+
+.painel-container h2 {
+  margin-top: 0;
+  color: #399c0c901f3d;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-grupo {
+  margin-bottom: 1.2rem;
+}
+
+.form-grupo label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.form-grupo input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ffb300;
+  border-radius: 8px;
+  box-sizing: border-box;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-grupo input:focus {
+  outline: none;
+  border-color: #9c0c90;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.2);
+}
+
+button {
+  width: 100%;
+  background-color: #9c0c90;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 1rem;
+}
+
+button:hover {
+  background-color: #9c0c90;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+#mensagem-aviso {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  min-height: 1.2rem;
+}
+
+.btn-admin {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ebb503;
+  border: 1px solid #ff00d9;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.btn-admin:hover {
+  background-color: #ff00d9;
+  color: #fff;
+}
+
+.btn-navegacao {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ebb503;
+  border: 1px solid #ff00d9;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.btn-navegacao:hover {
+  background-color: #ff00d9;
+  color: #fff;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #820b78 0%, #623756 100%);
+
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CONTAINER */
+.login-container {
+  width: 100%;
+  max-width: 350px;
+  padding: 30px;
+  border-radius: 12px;
+  background: rgb(255, 243, 223);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* INPUTS */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+}
+
+/* FOCO BONITO */
+input:focus {
+  border-color: #9c0c90;
+  outline: none;
+}
+
+/* GRUPO SENHA */
+.senha-grupo {
+  display: flex;
+  gap: 8px;
+}
+
+.senha-grupo input {
+  flex: 1;
+}
+
+/* BOTÃO OLHO */
+#btn-olho {
+  width: 45px;
+  background: #9c0c90;
+  color: black;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #9c0c90;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+/* HOVER */
+button:hover {
+  background: #ff00d9;
+  transform: scale(1.02);
+}
+
+/* MENSAGEM */
+#mensagem {
+  margin-top: 10px;
+  font-size: 14px;
+}
