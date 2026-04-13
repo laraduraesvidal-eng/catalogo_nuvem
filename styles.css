@@ -239,8 +239,91 @@ button:hover {
   transform: scale(1.02);
 }
 
-/* MENSAGEM */
-#mensagem {
+/* Carrinho lateral simples */
+/* Carrinho lateral simples e arrastável */
+.carrinho-container {
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  width: 280px;
+  max-height: 70vh;
+  overflow-y: auto;
+  background-color: rgb(255, 243, 223);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+  cursor: grab; /* Indica que pode arrastar */
+  z-index: 1000;
+}
+
+/* Título */
+.carrinho-container h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Lista de itens */
+#lista-carrinho {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-carrinho li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  margin-bottom: 6px;
+  background-color: rgb(255, 243, 223);
+  border-radius: 6px;
+}
+
+.btn-remover {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Total e botões */
+.carrinho-total {
+  text-align: right;
+  font-weight: bold;
   margin-top: 10px;
-  font-size: 14px;
+}
+
+.btn-finalizar,
+.btn-limpar {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-finalizar {
+  background-color: #9c0c90;
+  color: #fff;
+}
+.btn-limpar {
+  background-color: #cc831d;
+  color: #fff;
+}
+
+.vitrine-produtos {
+  z-index: 1; /* Produtos atrás do carrinho */
+  position: relative;
+}
+
+.carrinho-container {
+  z-index: 1000; /* Sempre acima */
 }
